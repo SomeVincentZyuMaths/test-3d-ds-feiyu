@@ -5,3 +5,18 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+
+# Include Markdown everywhere (README, docs, licenses, etc.) in GitHub stats.
+# Keep the detected language; only override the statistics exclusion flags.
+*.[mM][dD] linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.markdown linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.mdown linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.mdwn linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.mkd linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.mkdn linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.mkdown linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.livemd linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.ronn linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.scd linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+*.workbook linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false
+contents.lr linguist-detectable=true linguist-documentation=false linguist-vendored=false linguist-generated=false

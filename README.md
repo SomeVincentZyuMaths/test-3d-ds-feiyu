@@ -2,14 +2,38 @@
 
 本地测试入口：`http://127.0.0.1:62666/`。
 
-线上地址：https://somevincentzyumaths.github.io/test-3d-ds-feiyu/
+线上地址：https://somevincentzyumaths.github.io/test-3d-ds-feiyu/ [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Live-496e5c?logo=github&logoColor=white)](https://somevincentzyumaths.github.io/test-3d-ds-feiyu/)
 
-仓库：https://github.com/SomeVincentZyuMaths/test-3d-ds-feiyu
+仓库：https://github.com/SomeVincentZyuMaths/test-3d-ds-feiyu [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/SomeVincentZyuMaths/test-3d-ds-feiyu)
+
+[![Deploy GitHub Pages](https://github.com/SomeVincentZyuMaths/test-3d-ds-feiyu/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/SomeVincentZyuMaths/test-3d-ds-feiyu/actions/workflows/pages.yml)
+[![Node.js 22.12+](https://img.shields.io/badge/Node.js-22.12%2B-5FA04E?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Three.js 0.180.0](https://img.shields.io/badge/Three.js-0.180.0-000000?logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![three-vrm 3.6.0](https://img.shields.io/badge/three--vrm-3.6.0-0096FA)](https://github.com/pixiv/three-vrm)
+[![Vite 7.3.8](https://img.shields.io/badge/Vite-7.3.8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+
+[![VRM 1.0](https://img.shields.io/badge/Cast_VRM-1.0-4979a8)](https://vrm.dev/en/)
+[![WebGL 2](https://img.shields.io/badge/WebGL-2-990000?logo=webgl&logoColor=white)](https://www.khronos.org/webgl/)
+[![Model license CC BY-NC-SA 4.0](https://img.shields.io/badge/Model_license-CC_BY--NC--SA_4.0-b58b45?logo=creativecommons&logoColor=white)](./public/licenses/DERIVATIVES.md)
 
 - `#cast`：Nike 原版肥鱼，以及共用长身底模的 GPT 白龙、Gemini 猫咪、Claude 太阳花结构改版。支持四人同台和单人观察。
 - `#fish`：原有 62667 demo 的三款 VRM，支持并排、单人和联动相机。62667 的原文件未改动，新页面不依赖该端口。
 
 Three.js 与 three-vrm 负责真正的 3D 网格、骨骼和表情。全站仅一个 WebGL 画布和一条渲染循环；切换展区保留各自选择与相机，非当前展区不更新动画。只有需要的模型才下载，重复使用 Nike 时只共享原始字节、不共享可变骨骼实例。
+
+## 页面预览
+
+<p align="center">
+  <a href="./preview/deepseek-model-comparison.png">
+    <img
+      src="./preview/deepseek-model-comparison.png"
+      alt="星象观测室的肥鱼三模型对比页，展示 Nike 长身版 DeepSeek 肥鱼"
+      width="360"
+    />
+  </a>
+</p>
+
+肥鱼三模型对比页 · Nike 长身版。截图由用户提供，点击可查看原图；模型署名与许可见 [来源说明](./SOURCES.md)。
 
 ## 本机运行
 
