@@ -1,0 +1,19 @@
+{
+  "name": "aster-in-blue",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 62666 --strictPort",
+    "build": "vite build",
+    "test": "node --test",
+    "preview": "vite preview --host 127.0.0.1 --port 62666 --strictPort"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "3.6.0",
+    "three": "~0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}

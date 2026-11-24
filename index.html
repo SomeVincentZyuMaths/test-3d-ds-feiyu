@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f4f3ec" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23243835'/%3E%3Cpath d='M32 10 37 27 54 32 37 37 32 54 27 37 10 32 27 27Z' fill='%23e9dfc7'/%3E%3C/svg%3E"
+    />
+    <title>星象观测室 · 四位模型娘与肥鱼对比</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <a class="brand" href="#cast"
+          ><span class="brand-mark">✦</span><b>星象观测室</b
+          ><span>ASTER ATLAS</span></a
+        >
+        <div class="edition">
+          <i></i> INTERACTIVE CHARACTER STUDY <span>VOL. 02</span>
+        </div>
+      </header>
+      <nav class="collection-tabs" aria-label="一级展示分类" role="tablist">
+        <button
+          id="collection-cast"
+          data-page="cast"
+          role="tab"
+          aria-selected="true"
+          aria-controls="collection-panel"
+        >
+          <span>01</span> 四位模型娘 <small>THE CAST</small>
+        </button>
+        <button
+          id="collection-fish"
+          data-page="fish"
+          role="tab"
+          aria-selected="false"
+          aria-controls="collection-panel"
+          tabindex="-1"
+        >
+          <span>02</span> 肥鱼三模型对比 <small>MODEL LAB</small>
+        </button>
+      </nav>
+      <main
+        id="collection-panel"
+        role="tabpanel"
+        aria-labelledby="collection-cast"
+      >
+        <section class="intro">
+          <div>
+            <p id="eyebrow" class="eyebrow">
+              FOUR CHARACTERS / ONE SHARED BEGINNING
+            </p>
+            <h1 id="page-title">同一个起点，<em>四种性格。</em></h1>
+          </div>
+          <p id="page-description" class="intro-note">
+            保留成熟的五官，重新诠释角色。<br />长身比例 · 独立衣装 · 真实 3D
+          </p>
+        </section>
+        <section class="selection-bar" aria-label="选择角色和显示模式">
+          <div
+            id="model-tabs"
+            class="model-tabs"
+            role="tablist"
+            aria-label="选择模型"
+          ></div>
+          <div class="selection-actions">
+            <label id="sync-label"
+              ><input id="sync" type="checkbox" checked /> 联动视角</label
+            ><button id="reset" class="quiet">↺ 重置镜头</button
+            ><button id="fullscreen" class="quiet" aria-label="全屏展示">
+              ⤢ 全屏
+            </button>
+          </div>
+        </section>
+        <section class="observation-controls" aria-label="三维观察工具">
+          <div class="control-set">
+            <span class="control-label">镜头</span
+            ><button data-view="body" aria-pressed="true">全身</button
+            ><button data-view="bust" aria-pressed="false">半身</button
+            ><button data-view="face" aria-pressed="false">面部</button
+            ><button data-view="angle" aria-pressed="false">¾ 侧面</button
+            ><button data-view="back" aria-pressed="false">背面</button>
+          </div>
+          <div class="control-set">
+            <span class="control-label">着色</span
+            ><button data-shade="original" aria-pressed="true">原材质</button
+            ><button data-shade="clay" aria-pressed="false">素模</button
+            ><button data-shade="wire" aria-pressed="false">线框</button>
+          </div>
+          <div class="control-set">
+            <span class="control-label">表情</span
+            ><select id="expression" aria-label="角色表情"></select
+            ><label><input id="motion" type="checkbox" checked /> 待机</label
+            ><button id="special" aria-pressed="false">角色动作</button
+            ><button id="tpose" aria-pressed="false">T 姿势</button>
+          </div>
+        </section>
+        <div class="studio" id="studio">
+          <div class="render-area" id="render-area">
+            <div id="canvas-host" aria-hidden="true"></div>
+            <div
+              id="cast-stage"
+              class="cast-stage"
+              tabindex="0"
+              role="img"
+              aria-label="四位模型娘三维展示，左键平移，中键或右键旋转，滚轮缩放"
+            >
+              <div class="stage-top">
+                <span class="plate-tag" id="stage-label">PLATE 001 — 004</span>
+                <div id="environment-controls" class="stage-chips">
+                  <button data-env="studio" aria-pressed="true">
+                    柔光摄影棚</button
+                  ><button data-env="space" aria-pressed="false">外太空</button
+                  ><button data-env="reef" aria-pressed="false">珊瑚礁</button>
+                </div>
+              </div>
+              <div id="cast-progress" class="cast-progress" role="status"></div>
+              <div
+                id="compare-divider"
+                class="compare-divider"
+                role="slider"
+                tabindex="0"
+                aria-label="材质对照分界线"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="50"
+                hidden
+              >
+                <span>‹ ›</span>
+              </div>
+              <div class="stage-bottom">
+                <span id="cast-caption"
+                  >NIKE ORIGINAL + THREE STRUCTURAL REINTERPRETATIONS</span
+                ><label class="compare-switch"
+                  ><input id="compare" type="checkbox" /> 材质对照</label
+                >
+              </div>
+            </div>
+            <div id="fish-grid" class="fish-grid" hidden></div>
+          </div>
+          <div id="cast-roster" class="cast-roster"></div>
+        </div>
+        <div class="interaction-notes">
+          <p>
+            ↔ 左键平移 <b>·</b> 中键 / 右键旋转 <b>·</b> 滚轮缩放
+            <b>·</b> 触屏单指旋转、双指缩放
+          </p>
+          <span id="render-status" role="status">正在准备观测台…</span>
+        </div>
+        <p id="selection-note" class="selection-note"></p>
+        <details class="credits">
+          <summary>
+            模型来源、改版记录与使用边界
+            <span>非官方同人 · 保留原作者署名</span>
+          </summary>
+          <div class="credit-grid">
+            <section>
+              <h3>长身底模 & 三位改版</h3>
+              <p>
+                原作角色「溟月」：上善无形；女仆设计：ZipZipPipe；3D 底模：ニケ
+                /
+                Nike。白龙、猫咪与太阳花为本项目的非官方结构改版，不代表相应公司的官方形象。
+              </p>
+              <p>
+                CC BY-NC-SA
+                4.0：非商业、署名、修改版以相同许可分享。改版保留脸部与骨骼，调整发型、衣装、配件及贴图。
+              </p>
+              <a
+                href="https://github.com/tegnike/deepseek-chan-vrm"
+                target="_blank"
+                rel="noreferrer"
+                >原模型与可编辑工程 ↗</a
+              >
+              ·
+              <a href="./licenses/DERIVATIVES.md" target="_blank"
+                >本项目改版记录 ↗</a
+              >
+            </section>
+            <section>
+              <h3>水原镜 · StarLite 转换版</h3>
+              <p>
+                本地对比使用 StarLite 的 VRM 转换文件，不等同于作者原始 VRM
+                包。转换材质与物理效果可能不同。特别授权限定用途，不推定为本项目的公开分发许可。
+              </p>
+              <p>仅本地开发服务提供；不随生产构建发布。</p>
+              <a href="./licenses/mirror-license.md" target="_blank"
+                >查看随包条款 ↗</a
+              >
+            </section>
+            <section>
+              <h3>木子恶魔 · 蓝色小肥鱼</h3>
+              <p>
+                来自获得随插件分发授权的 vrmpet3d
+                项目；插件代码许可证不适用于模型。当前 VRM
+                元数据限制修改和再分发，未取用其素材制作另外三位角色。
+              </p>
+              <p>仅本地开发服务提供；不随生产构建发布。</p>
+              <a href="./licenses/muzi-source.md" target="_blank"
+                >查看来源与授权说明 ↗</a
+              >
+            </section>
+          </div>
+          <p>
+            本页的待机和角色动作由查看器驱动，不是作者原配动画。参考插画仅作本地制作参考，不随网页分发。完整模型出处及限制见项目
+            SOURCES.md。
+          </p>
+        </details>
+      </main>
+      <footer>
+        <span>ASTER ATLAS / CHARACTER ARCHIVE</span
+        ><span>看清差别，再决定下一步。</span>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
